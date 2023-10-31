@@ -10,7 +10,7 @@ import random
 
 spaceName = "cosine"
 wordList= []
-count = 10000
+count = 300000
 def write_list(a_list):
     with open(f'embeddings{count}.pickle','wb') as fp:
         pickle.dump(a_list,fp)
@@ -73,9 +73,15 @@ else:
     print(f"Succesfully loaded model in {end_time - start_time} seconds")
 
 
-new_word = "ofoal"
+new_word1 = "king"
 
-new_embedding =  model.encode([new_word])
+new_word2 = "crown"
+new_word1 =  model.encode([new_word1])
+new_word2 = model.encode([new_word2])
+new_embedding = (new_word2 + new_word1)
+print(new_word1[0][0])
+print(new_word2[0][0])
+print(new_embedding[0][0])
 # Fetch k neighbours
 start_time = time.time()
 for i in range(100):
@@ -87,15 +93,6 @@ print(elapsed_time)
 print(wordList[labels[0][0]])
 
 
-
-fig = plt.figure()
-x = [1,2,3,4,5]
-y = [2,4,8,16,32]
-plt.plot(x,y)
-plt.xlabel("Number of elements in HNSW")
-plt.ylabel("Time in milliseconds")
-plt.title(f"Time Required to search up 100 randomly chosen elements \n in HNSW graphs of varying sizes, \n calculated via a {spaceName} distance metric")
-plt.show()
 
 
 #Start from what graphs I want, then come from there.
