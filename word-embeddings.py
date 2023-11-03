@@ -90,7 +90,7 @@ end_time = time.time()
 elapsed_time = end_time - start_time
 # The Elapsed time greatly differs, even with the same model, same data, and same query parameter
 print(elapsed_time)
-print(wordList[labels[0][0]])
+print(wordList[labels[0][0]])#HNSW algorithm gives 
 
 
 

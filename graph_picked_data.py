@@ -44,11 +44,11 @@ print("IP:",popt2[0],popt2[1])
 print("L2:",popt3[0],popt3[1])
 
 #plt.plot(ip_x,ip_y, color="g",label="IP")
-#plt.plot(ip_x,y_fit_ip, color="black",label="IP Logarithmic Regression")
-plt.plot(l2_x,l2_y, color="b",label="L2")
-plt.plot(l2_x,y_fit_l2, color="black",label="L2 Logarithmic Regression")
+plt.plot(ip_x,y_fit_ip, color="blue",label="IP Logarithmic Regression")
+#plt.plot(l2_x,l2_y, color="b",label="L2")
+#plt.plot(l2_x,y_fit_l2, color="black",label="L2 Logarithmic Regression")
 #plt.plot(cosine_x,cosine_y, color="r",label="Cosine")
-#plt.plot(cosine_x,y_fit_cosine, color="black",label="Cosine Logarithmic Regression")
+plt.plot(cosine_x,y_fit_cosine, color="black",label="Cosine Logarithmic Regression")
 
 
 plt.xlabel("Number of elements in HNSW")
